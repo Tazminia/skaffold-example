@@ -1,0 +1,13 @@
+apiVersion: skaffold/v4beta10
+kind: Config
+metadata:
+  name: skaffold-poc
+build:
+  artifacts:
+    - image: tazminia/helloworld-api
+      context: api
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - manifests/api.yaml
